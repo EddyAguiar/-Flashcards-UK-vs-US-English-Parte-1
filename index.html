@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flashcards – UK vs US English</title>
+<style>
+:root { --uk:#1e90ff; --us:#ff4d4d; --compare:#ffae00; --practice:#8e24aa; }
+body{font-family:Arial;background:#f6f7fb;padding:20px;max-width:1100px;margin:auto;}
+h1{text-align:center;color:#222;margin-bottom:25px;}
+.flashcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.card{background:white;border-radius:12px;padding:20px;border-left:6px solid;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,.1);}
+.card:hover{transform:translateY(-4px);}
+.uk{border-color:var(--uk);} .us{border-color:var(--us);} .compare{border-color:var(--compare);} .practice{border-color:var(--practice);}
+.content{display:none;} .content.active{display:block;}
+.section{margin-top:10px;padding:10px;border-radius:8px;}
+.examples{background:#fff3cd;} .notes{background:#e7f3ff;} .practice-block{background:#f3e5f5;margin-top:10px;}
+button{background:var(--practice);color:white;border:none;padding:5px 10px;margin-top:5px;border-radius:8px;cursor:pointer;}
+.practice-answer{display:none;background:#e8ddf2;padding:8px;margin-top:5px;border-radius:6px;}
+.practice-answer.active{display:block;}
+</style>
+</head>
+<body>
+
+<h1>🇬🇧🇺🇸 Flashcards – Diferenças entre Inglês Britânico (UK) vs Americano (US)</h1>
+<p style="text-align:center;">Clique nos cards para revelar conteúdo • Cada categoria contém frases adicionais e 3 exercícios</p>
+
+<div class="flashcards">
+
+<!-- VOCABULARY -->
+<div class="card compare" onclick="toggle(this)">
+<b>📌 Vocabulário – UK x US</b>
+<div class="content">
+<div class="notes"><strong>Diferenças principais:</strong><br>Football vs Soccer, Flat vs Apartment, Chips vs French Fries</div>
+<div class="examples">
+<ul>
+<li>UK: I live in a flat near the river.<br>US: I live in an apartment near the river.</li>
+<li>UK: We're playing football this weekend.<br>US: We're playing soccer this weekend.</li>
+<li>UK: She ordered chips at the pub.<br>US: She ordered french fries at the restaurant.</li>
+<li>UK: Could you ring me later?<br>US: Could you call me later?</li>
+</ul>
+</div>
+<div class="practice-block">
+<b>Exercícios:</b><br>
+1) Traduza para UK: "I live in an apartment." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">I live in a flat.</div>
+2) Mude para US: "She loves playing football." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">She loves playing soccer.</div>
+3) Complete (UK): "I'll take the ___ to the 5th floor." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">lift</div>
+</div>
+</div>
+</div>
+
+<!-- SPELLING -->
+<div class="card compare" onclick="toggle(this)">
+<b>✍ Ortografia – Spelling</b>
+<div class="content">
+<div class="notes">UK: colour, organise, travelled<br>US: color, organize, traveled</div>
+<div class="examples">
+<ul>
+<li>UK: The colour of the car is red. / US: The color of the car is red.</li>
+<li>UK: They organised a party. / US: They organized a party.</li>
+<li>UK: She has travelled a lot. / US: She has traveled a lot.</li>
+<li>UK: The theatre was full. / US: The theater was full.</li>
+</ul>
+</div>
+<div class="practice-block">
+<b>Exercícios:</b><br>
+1) Escreva em US: "Colour" <button onclick="show(event,this)">Resposta</button><div class="practice-answer">Color</div>
+2) Converta para UK: "Organize" <button onclick="show(event,this)">Resposta</button><div class="practice-answer">Organise</div>
+3) Escreva em US: "Travelled" <button onclick="show(event,this)">Resposta</button><div class="practice-answer">Traveled</div>
+</div>
+</div>
+</div>
+
+<!-- GRAMMAR -->
+<div class="card compare" onclick="toggle(this)">
+<b>📘 Gramática – Uso</b>
+<div class="content">
+<div class="notes">UK usa Present Perfect com mais frequência; US tende ao Simple Past</div>
+<div class="examples">
+<ul>
+<li>UK: I've just eaten. / US: I just ate.</li>
+<li>UK: He's got better. / US: He's gotten better.</li>
+<li>UK: The team are winning. / US: The team is winning.</li>
+<li>UK: I've already seen that movie. / US: I already saw that movie.</li>
+</ul>
+</div>
+<div class="practice-block">
+<b>Exercícios:</b><br>
+1) Transforme em US: "I've just finished." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">I just finished.</div>
+2) Transforme em UK: "He's gotten taller." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">He's got taller.</div>
+3) Complete (UK): "The staff ___ working hard." <button onclick="show(event,this)">Resposta</button><div class="practice-answer">are</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+function toggle(el){ el.querySelector(".content").classList.toggle("active"); }
+function show(e,btn){ e.stopPropagation(); btn.nextElementSibling.classList.toggle("active"); }
+</script>
+
+</body>
+</html>
